@@ -75,7 +75,7 @@ const Page1 = () => {
     })
   },[])
 
-  return <div className="">
+  return <div className="content">
     <h2>Pagina 1</h2>
     <div className="chart">
       <div className="row">

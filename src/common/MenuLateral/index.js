@@ -3,25 +3,34 @@ import { NavLink } from 'react-router-dom'
 
 import './MenuLateral.scss'
 
+import IconLeaf from '../../components/IconLeaf'
+import IconGraphic from '../../components/IconGraphic'
+
 const MenuLateral = () => {
   return <div className="menu">
     <ul>
       <li>
+        <span>Semantix</span>
+      </li>
+      <li>
         <NavLink
           exact
-          activeClassName="navbar__link--active"
-          className="navbar__link"
+          activeClassName="navbar__active"
+          className="navbar"
           to="/"
-        > Home
+        >
+          <IconGraphic />
+          Page 1
         </NavLink>
       </li>
       <li>
         <NavLink
-          activeClassName="navbar__link--active"
-          className="navbar__link"
+          activeClassName="navbar__active"
+          className="navbar"
           to="/time-data"
         >
-          time-data
+          <IconLeaf />
+          Page 2
         </NavLink>
       </li>
     </ul>

@@ -7,7 +7,7 @@ import './App.scss'
 
 const App = () => {
   return (
-    <div className="container content">
+    <div className="container">
       <MenuLateral />
       <Routes />
     </div>
