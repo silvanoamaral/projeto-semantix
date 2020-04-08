@@ -2,8 +2,12 @@
 
 const axios = require('axios')
 
-const getAnualResult = async (req, res, next) => {
-  await axios.get('https://private-afe609-testefront.apiary-mock.com/anual-result')
+const baseURL = 'https://private-afe609-testefront.apiary-mock.com'
+
+const getDados = async (req, res, next) => {
+  const path = req.query.path || 'anual-result'
+
+  await axios.get(`${baseURL}/${path}`)
   .then(response => {
     if(response.status != 200)
       return {error: 'Sistema indisponível, tente mais tarde.'}
@@ -20,5 +24,5 @@ const getAnualResult = async (req, res, next) => {
 }
 
 module.exports = {
-  getAnualResult
+  getDados
 }

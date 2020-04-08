@@ -11,7 +11,8 @@ const Page1 = () => {
   const chartLine = useRef()
 
   useEffect(() => {
-    const result = axios('api/anual-result')
+    const result = axios('api/result', { params: { path: 'anual-result' } })
+
     result.then(res => {
       const labels = res.data.map(item => item.label)
       const values = res.data.map(item => item.value)

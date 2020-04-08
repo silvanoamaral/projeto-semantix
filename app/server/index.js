@@ -7,9 +7,11 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = process.env.PORT || 5002
 
-const { getAnualResult } = require('../modules/anualResult')
+const {
+  getDados
+} = require('../modules/getResults')
 
-app.use('/api/anual-result', getAnualResult)
+app.use('/api/result', getDados)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('dist'))
