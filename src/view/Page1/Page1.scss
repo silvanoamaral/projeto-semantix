@@ -1,0 +1,27 @@
+$shadow: 0 3px 8px 0 rgba(62, 100, 146, 0.16);
+
+.chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .row {
+    background: #FFFFFF;
+    border: 1px solid #D8DDE6;
+    border-radius: 4px;
+    box-shadow: $shadow;
+    width: 40%;
+    padding: 15px;
+    min-height: 290px;
+
+    strong {
+      color: #035A27;
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+  }
+}

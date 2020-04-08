@@ -1,5 +1,22 @@
-.App {
-  text-align: center;
-  min-height: 50%;
-  height: 650px;
+* {
+  color: #001B36;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background: #fff;
+}
+
+a {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }

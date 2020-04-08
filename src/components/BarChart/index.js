@@ -9,7 +9,12 @@ const BarChart = props => {
   } = props
 
   return <div className="chart__bar">
-    <Bar ref={ refs } data={ data } options={options} />
+    <Bar
+      ref={ refs }
+      data={ data }
+      options={options}
+      height={250}
+    />
   </div> 
 }
 
