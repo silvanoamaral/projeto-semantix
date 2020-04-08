@@ -1,19 +1,40 @@
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
-import { Bar } from 'react-chartjs-2'
 
 import PieChart from '../../components/PieChart'
+import BarChart from '../../components/BarChart'
 
 const Page1 = () => {
   const [data, setData] = useState(false)
+  const [dataPercentage, setDataPercentage] = useState(false)
 
   const chart = useRef()
   const chartLine = useRef()
 
-  useEffect(() => {
-    const result = axios('api/result', { params: { path: 'anual-result' } })
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    legend: false,
+    scales: {
+      xAxes: [{
+        gridLines: {
+          display: false,
+          drawBorder: false
+        }
+      }],
+      yAxes: [{
+          gridLines: {
+            display: true,
+            drawBorder: false
+          }
+      }]
+    }
+  }
 
-    result.then(res => {
+  useEffect(() => {
+    const resultAnual = axios('api/result', { params: { path: 'anual-result' } })
+
+    resultAnual.then(res => {
       const labels = res.data.map(item => item.label)
       const values = res.data.map(item => item.value)
 
@@ -21,32 +42,34 @@ const Page1 = () => {
         labels: labels,
         datasets: [
           {
-            label: 'My First dataset',
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: 'rgba(75,192,192,0.4)',
-            borderColor: 'rgba(75,192,192,1)',
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: 'rgba(75,192,192,1)',
-            pointBackgroundColor: '#fff',
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-            pointHoverBorderColor: 'rgba(220,220,220,1)',
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
+            backgroundColor: '#03A9F4',
             data: values
           }
-        ],
-        options: {
-          responsive: true,
-        }
+        ]
       }
       setData(data)
+    })
+
+    //PieChart
+    const resultPercentage = axios('api/result', { params: { path: 'anual-percentage' } })
+    resultPercentage.then(res => {
+      const labels = res.data.map(item => item.label)
+      const values = res.data.map(item => item.value)
+
+      const dataPercentage = {
+        labels: labels,
+        datasets: [
+          {
+            data: values,
+            backgroundColor: [
+              '#DBECF8',
+              '#32B88B',
+              '#3691c3'
+            ]
+          }
+        ]
+      }
+      setDataPercentage(dataPercentage)
     })
   },[])
 
@@ -54,11 +77,10 @@ const Page1 = () => {
     <h2>Pagina 1</h2>
     {data &&
       <>
-        <div className="bar__chart">
-          <Bar ref={chart} data={data} />
-        </div>
-       
-        <PieChart data={data} refs={chartLine} />
+        <BarChart refs={chart} data={data} options={options} />
+        {dataPercentage &&
+          <PieChart refs={chartLine} data={dataPercentage}/>
+        }
       </>
     }
     

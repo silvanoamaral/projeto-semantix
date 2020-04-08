@@ -1,15 +1,15 @@
 import React from 'react'
-
 import { Pie } from 'react-chartjs-2'
 
 const PieChart = props => {
   const {
     data,
-    refs
+    refs,
+    options
   } = props
 
-  return <div className="pie__chart anual-percentage">
-    <Pie ref={ refs } data={ data } />
+  return <div className="chart__pie">
+    <Pie ref={ refs } data={ data }  options={options} />
   </div>
 }
 
