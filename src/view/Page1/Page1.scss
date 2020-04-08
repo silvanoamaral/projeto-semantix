@@ -24,4 +24,10 @@ $shadow: 0 3px 8px 0 rgba(62, 100, 146, 0.16);
       margin-bottom: 15px;
     }
   }
+
+  &__line {
+    .row {
+      width: 70%;
+    }
+  }
 }
