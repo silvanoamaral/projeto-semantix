@@ -9,7 +9,7 @@ const PieChart = props => {
   } = props
 
   return <div className="chart__pie">
-    <Pie ref={ refs } data={ data }  options={options} />
+    <Pie ref={ refs } data={ data }  options={options} height={250} />
   </div>
 }
 

@@ -33,6 +33,20 @@ const Page1 = () => {
     }
   }
 
+  const optionsPie = {
+    responsive: true,
+    maintainAspectRatio: false,
+    legend: {
+      align: 'end',
+      labels: {
+        boxWidth: 5,
+        usePointStyle: true,
+        strokeStyle: Color,
+        padding: 25
+      }
+    }
+  }
+
   useEffect(() => {
     const resultAnual = axios('api/result', { params: { path: 'anual-result' } })
 
@@ -87,7 +101,7 @@ const Page1 = () => {
       <div className="row">
         <strong>PIE Chart</strong>
         {dataPercentage &&
-          <PieChart refs={chartLine} data={dataPercentage}/>
+          <PieChart refs={chartLine} data={dataPercentage} options={optionsPie} />
         }
       </div>
     </div>
