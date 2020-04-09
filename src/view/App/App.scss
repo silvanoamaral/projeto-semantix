@@ -19,10 +19,28 @@ a {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .content {
   width: 100%;
+  min-height: 600px;
+
+  h2 {
+    padding: 10px 0 20px 20px;
+    font-weight: normal;
+    font-size: 31px;
+    line-height: 40px;
+
+    @media (min-width: 768px) {
+      padding: 15px 0 25px 40px;
+      font-size: 48px;
+      line-height: 65px;
+    }
+  }
 }

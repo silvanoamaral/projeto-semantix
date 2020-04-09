@@ -1,20 +1,39 @@
 .menu {
   background: linear-gradient(180deg, #000000 0%, #B5B5B5 100%);
-  width: 100px;
-  height: 533px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 100px;
+    height: 533px;
+  }
 
   ul {
     height: 100%;
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+      flex-direction: column;
+    }
 
     li {
       display: flex;
       width: 100%;
       text-align: center;
       justify-content: center;
-      margin: 20px 0;
+
+      &:first-child {
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        margin: 20px 0;
+
+        &:first-child {
+          display: flex;
+        }
+      }
 
       span {
         color: #fff;
@@ -33,7 +52,11 @@
         flex-direction: column;
         font-size: 12px;
         width: 105px;
-        height: 85px;
+        height: 70px;
+
+        @media (min-width: 768px) {
+          height: 85px;
+        }
 
         svg {
           width: 25px;
