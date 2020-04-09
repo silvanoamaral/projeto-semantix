@@ -9,9 +9,7 @@ import IconGraphic from '../../components/IconGraphic'
 const MenuLateral = () => {
   return <div className="menu">
     <ul>
-      <li>
-        <span>Semantix</span>
-      </li>
+      <li><span>Semantix</span></li>
       <li>
         <NavLink
           exact
