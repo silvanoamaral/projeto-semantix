@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 
-import './Page2.scss'
-
 import LineChart from '../../components/LineChart'
 
 const Page2 = () => {

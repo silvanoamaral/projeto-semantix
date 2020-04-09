@@ -4,8 +4,6 @@ import axios from 'axios'
 import PieChart from '../../components/PieChart'
 import BarChart from '../../components/BarChart'
 
-import './Page1.scss'
-
 const Page1 = () => {
   const [data, setData] = useState(false)
   const [dataPercentage, setDataPercentage] = useState(false)

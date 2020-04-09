@@ -3,7 +3,7 @@ import React from 'react'
 import MenuLateral from '../../common/MenuLateral'
 import Routes from '../../routes'
 
-import './App.scss'
+import '../../assets/css/index.scss'
 
 const App = () => {
   return (
