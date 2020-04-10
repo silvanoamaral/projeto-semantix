@@ -3,11 +3,15 @@ const path = require('path')
 module.exports = {
   devtool: 'source-map',
   entry: {
-    app: path.join(__dirname, '../src/index.js')
+    app: path.join(__dirname, '../src/index.js'),
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.join(__dirname, '../dist')
+  },
+  performance: {
+    maxEntrypointSize: 712000,
+    maxAssetSize: 712000
   },
   module: {
     rules: [
