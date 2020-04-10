@@ -13,6 +13,7 @@ Project [here](https://project-semantix.herokuapp.com/)
 * Javascript / ES6
 * Node.js
 * Jest
+* Cypress
 
 ## Getting Started
 
