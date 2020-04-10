@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "node app/server/index.js",
+    "start": "node app/server/index.js",
     "dev": "webpack-dev-server --config webpack/webpack.dev.js --open",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run dev\" ",
+    "start:dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run dev\" ",
     "build": "webpack -p --config webpack/webpack.prod.js",
     "test": "jest --coverage",
     "test:watch": "npm test -- --watchAll --verbose"
@@ -22,7 +22,8 @@
     "react-dom": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
     "react-hot-loader": "^4.3.11",
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^5.1.2",
+    "serve": "^11.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
