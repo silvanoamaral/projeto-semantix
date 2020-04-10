@@ -40,6 +40,10 @@ npm run server
 ### `To run the module's unit tests`
 * Run command `npm run test:watch`
 
+### `To run the module's E2E tests`
+* Run command `npm run cypress`
+* Help [cypress](https://docs.cypress.io/guides/overview/why-cypress.html#Running-tests)
+
 ### `Available Scripts`
 
 After installing project dependencies, in the project directory you can run: `npm start`
