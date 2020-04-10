@@ -4,8 +4,9 @@ import axios from 'axios'
 const useFetch = (url, initialValue) => {
   const [data, setData] = useState(initialValue)
   const [loading, setLoading] = useState(true)
+
   useEffect(() => {
-    const fetchData = async function() {
+    const fetchData = async () => {
       try {
         setLoading(true)
         const res = await axios.get(url)
@@ -13,7 +14,7 @@ const useFetch = (url, initialValue) => {
           setData(res.data)
         }
       } catch (error) {
-        console.log(error)
+        throw error
       } finally {
         setLoading(false)
       }

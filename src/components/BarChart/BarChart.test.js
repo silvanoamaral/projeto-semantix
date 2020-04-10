@@ -8,7 +8,12 @@ describe('<BarChart /> Component', () => {
     responsive: true,
     maintainAspectRatio: false
   }
-  const data = {}
+  const data = [
+    {
+      "label": "january",
+      "value": 3000
+    }
+  ]
 
   const wrapper = mount(<BarChart ref={''} options={options} data={data} />)
 
