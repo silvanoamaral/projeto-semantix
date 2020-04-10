@@ -65,6 +65,9 @@
     },
     "setupFilesAfterEnv": [
       "./setupTests.js"
+    ],
+    "testPathIgnorePatterns" : [
+      "<rootDir>/cypress" 
     ]
   }
 }
