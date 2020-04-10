@@ -39,7 +39,6 @@ const Page1 = () => {
       labels: {
         boxWidth: 5,
         usePointStyle: true,
-        strokeStyle: Color,
         padding: 25
       }
     }
@@ -62,6 +61,8 @@ const Page1 = () => {
         ]
       }
       setData(data)
+    }).catch(error => {
+      console.log(error)
     })
 
     //PieChart
@@ -84,6 +85,8 @@ const Page1 = () => {
         ]
       }
       setDataPercentage(dataPercentage)
+    }).catch(error => {
+      console.log(error)
     })
   },[])
 

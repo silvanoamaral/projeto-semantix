@@ -8,9 +8,14 @@ const PieChart = props => {
     options
   } = props
 
-  return <div className="chart__pie">
-    <Pie ref={ refs } data={ data }  options={options} height={250} />
-  </div>
+  return (<div className="chart__pie">
+    <Pie
+      ref={refs}
+      data={data}
+      options={options}
+      height={250}
+    />
+  </div>)
 }
 
 export default PieChart

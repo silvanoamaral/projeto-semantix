@@ -8,14 +8,14 @@ const LineChart = props => {
     options
   } = props
 
-  return <div className="chart__line">
+  return (<div className="chart__line">
     <Line
       ref={refs}
       data={data}
       options={options}
       height={250}
     />
-  </div>
+  </div>)
 }
 
 export default LineChart

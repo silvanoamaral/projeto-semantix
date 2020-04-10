@@ -8,14 +8,14 @@ const BarChart = props => {
     options
   } = props
 
-  return <div className="chart__bar">
+  return (<div className="chart__bar">
     <Bar
       ref={ refs }
       data={ data }
       options={options}
       height={250}
     />
-  </div> 
+  </div>)
 }
 
 export default BarChart

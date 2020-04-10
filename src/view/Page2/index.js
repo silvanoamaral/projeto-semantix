@@ -16,7 +16,6 @@ const Page2 = () => {
       labels: {
         boxWidth: 5,
         usePointStyle: true,
-        strokeStyle: Color,
         padding: 25
       }
     },
@@ -74,6 +73,8 @@ const Page2 = () => {
         ]
       }
       setData(data)
+    }).catch(error => {
+      console.log(error)
     })
   },[])
 
